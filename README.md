@@ -9,7 +9,7 @@ Project	Prox challenge submission
 Runtime	Local FastAPI backend + browser UI
 API configuration	The Anthropic API key belongs in .env only. .env.example should contain placeholders only. core.py should read the key from environment variables and should not hardcode a secret.
 
-Project summary
+                                          Project summary
 This application turns the Vulcan OmniPro 220 manuals into a practical garage-side assistant. It answers technical questions, renders visual artifacts such as setup diagrams and tables, and supports image upload for troubleshooting flows.
 The goal is not only correctness, but better technical communication: when a question is easier to understand visually, the app renders a visual artifact instead of replying with text alone.
 Core capabilities
@@ -19,7 +19,8 @@ Duty-cycle tables and recommended settings cards.
 Manual evidence panel with supporting snippets.
 Image upload flow for weld-analysis style interactions.
 Voice input and output in supported browsers.
-Architecture
+                                            
+                                              Architecture
 The backend uses an agent orchestration flow: core.py retrieves relevant context, planner.py selects tools, tool modules generate structured outputs, and the frontend renders those outputs in an artifact panel.
 Tools are responsible for specific output types such as diagrams, tables, settings, evidence, and image galleries.
 This separation makes the project easier to maintain and closer to a real product experience than a plain chatbot.
@@ -35,6 +36,7 @@ Recommended run flow
 4. Run ingestion with python -m ingestion.pipeline.
 5. Start the backend with python -m uvicorn app.main:app --reload.
 6. Open ui/index.html in a browser.
+   
 Evaluator notes
 The app is designed so the evaluator only needs one API key in .env.
 If model availability differs by account, ANTHROPIC_MODEL can be changed in .env without changing the code.
@@ -45,7 +47,9 @@ FastAPI backend	Yes	Serves chat and image endpoints.
 Polished browser UI	Yes	Provides chat, artifact rendering, evidence view, upload, and voice controls.
 Manual ingestion pipeline	Yes	Parses PDFs into searchable context and extracted images.
 Environment placeholder file	Yes	Lets evaluators provide their own Anthropic API key.
+
 Run commands
+
 pip install -r requirements.txt
 python -m ingestion.pipeline
 python -m uvicorn app.main:app –reload
