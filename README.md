@@ -50,9 +50,9 @@ Environment placeholder file	Yes	Lets evaluators provide their own Anthropic API
 
 Run commands
 
-pip install -r requirements.txt
-python -m ingestion.pipeline
-python -m uvicorn app.main:app –reload
+1.pip install -r requirements.txt
+2.python -m ingestion.pipeline
+3.python -m uvicorn app.main:app –reload
 
 then open the ui/index.html
 
